@@ -1,24 +1,18 @@
 package com.github.anvirego;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import com.github.anvirego.interfaces.ExcelInterface;
 /**
  * @author Ing. Angelica Viridiana Rebolloza Gonzalez.
- * @version 3.0 03/2021.
+ * @version 4.0 03/2021.
  * ExcelIdem: Reads data from an Excel File. 
  */
-public final class ExcelIdem implements ExcelInterface {
+public final class ExcelIdem extends ExcelLogic {
 	private static ExcelIdem excelI= null;
 	private String excelFileName;
 	private String data;
@@ -30,10 +24,10 @@ public final class ExcelIdem implements ExcelInterface {
 	
 	public ExcelIdem(String excelFileName) throws FileNotFoundException, IOException {
 		this.excelFileName = excelFileName;
-		readDataExcel();
+		excelWorkBook = readDataExcel(excelFileName);
 	}//Constructor
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-	public static ExcelIdem getInstance(String excelFileName) throws FileNotFoundException, IOException {
+	protected static ExcelIdem getInstance(String excelFileName) throws FileNotFoundException, IOException {
 		System.out.println("==== Get ExcelIdem Instance =====");
 		if(excelI == null) {
 			System.out.println("New Instance");
@@ -44,23 +38,6 @@ public final class ExcelIdem implements ExcelInterface {
 			return excelI;
 		}
 	}
-//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-	private void readDataExcel() throws FileNotFoundException, IOException {
-		System.out.println("::::: readDataExcel :::::");
-		File file = new File(excelFileName);
-		//Create an object of FileInputStream to read excel file
-		FileInputStream inputStream = new FileInputStream(file);
-		if(inputStream != null) {
-			excelWorkBook = null;
-			//Find the file extension by splitting excelFileName in substrings and getting only extension
-			if((excelFileName.substring(excelFileName.indexOf("."))).equals(".xlsx")) {
-				excelWorkBook = new XSSFWorkbook(inputStream);
-			} else if((excelFileName.substring(excelFileName.indexOf("."))).equals(".xls")) {
-				excelWorkBook = new HSSFWorkbook(inputStream);
-			}
-			
-		} 	
-	}//Method
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 	public String getDataExcel(String excelSheetName, String search, int scenario) {
 		System.out.println("::::: getDataExcel ("+search+") scenario: "+scenario+" :::::");
@@ -129,15 +106,4 @@ public final class ExcelIdem implements ExcelInterface {
 			fileOut.close();
 		} catch (Exception e) {System.out.println("¡¡¡¡¡ setDataExcel Method: "+e+"!!!!!");}
 	}//Method
-//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-	@Override
-	public String getDataExcel(String search) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public String getDataExcel(String search, int scenario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }//Class

@@ -1,27 +1,17 @@
 package com.github.anvirego;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import com.github.anvirego.interfaces.ExcelInterface;
-
 /**
  * @author Ing. Angelica Viridiana Rebolloza Gonzalez.
- * @version 3.0 03/2021.
+ * @version 4.0 03/2021.
  * Excel: Reads data from an Excel File. 
  */
-public final class Excel implements ExcelInterface {
+public final class Excel extends ExcelLogic {
 	private static Excel excel = null;
-	private String excelFileName;
-	private String excelSheetName;
 	private String data;
 	private Sheet sheetBook;
 	private Row row;
@@ -29,12 +19,10 @@ public final class Excel implements ExcelInterface {
 	private double cellNumberData;
 	
 	public Excel(String excelFileName, String excelSheetName) throws FileNotFoundException, IOException {
-		this.excelFileName = excelFileName;
-		this.excelSheetName = excelSheetName;
-		readDataExcel();
+		sheetBook = readDataExcel(excelSheetName, excelFileName);
 	}//Constructor
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-	public static Excel getInstance(String excelFileName, String excelSheetName) throws FileNotFoundException, IOException {
+	protected static Excel getInstance(String excelFileName, String excelSheetName) throws FileNotFoundException, IOException {
 		System.out.println("==== Get Excel Instance =====");
 		if(excel == null) {
 			System.out.println("New Instance");
@@ -44,24 +32,6 @@ public final class Excel implements ExcelInterface {
 			System.out.println("Old Instance");
 			return excel;
 		}
-	}//Method
-//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-	private void readDataExcel() throws FileNotFoundException, IOException {
-		System.out.println("::::: readDataExcel("+excelSheetName+") :::::");
-		File file = new File(excelFileName);
-		//Create an object of FileInputStream to read excel file
-		FileInputStream inputStream = new FileInputStream(file);
-		if(inputStream != null) {
-			Workbook excelWorkBook = null;
-			//Find the file extension by splitting excelFileName in substrings and getting only extension
-			if((excelFileName.substring(excelFileName.indexOf("."))).equals(".xlsx")) {
-				excelWorkBook = new XSSFWorkbook(inputStream);
-			} else if((excelFileName.substring(excelFileName.indexOf("."))).equals(".xls")) {
-				excelWorkBook = new HSSFWorkbook(inputStream);
-			}
-			//Reading sheet inside Workbook by its name
-			sheetBook = excelWorkBook.getSheet(excelSheetName);
-		} 	
 	}//Method
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 	public String getDataExcel(String search) {
@@ -130,14 +100,4 @@ public final class Excel implements ExcelInterface {
 		} catch (Exception e) {System.out.println("¡¡¡¡¡ getDataExcel Method: "+e+"!!!!!");}
 		return cellData;
 	}//Method
-//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-	@Override
-	public String getDataExcel(String excelSheetName, String search, int scenario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public void setDataExcel(String excelSheetName, String search, int scenario, int value) {
-		// TODO Auto-generated method stub	
-	}
 }//Class

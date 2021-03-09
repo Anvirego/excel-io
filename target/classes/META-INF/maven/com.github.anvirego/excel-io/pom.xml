@@ -5,7 +5,7 @@
 
 	<groupId>com.github.anvirego</groupId>
 	<artifactId>excel-io</artifactId>
-	<version>3.0</version>
+	<version>4.0</version>
 	<packaging>jar</packaging>
 
 	<name>Excel Reader and Writer with Interface Implementation</name>
@@ -23,7 +23,7 @@
 		<developer>
 			<name>Angelica V. Rebolloza</name>
 			<email>evee_chan@hotmail.com</email>
-			<organization>Regav</organization>
+			<organization>Anvirego</organization>
 			<organizationUrl>https://github.com/Anvirego</organizationUrl>
 		</developer>
 	</developers>

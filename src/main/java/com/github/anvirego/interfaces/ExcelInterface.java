@@ -16,4 +16,5 @@ public interface ExcelInterface {
 		
 	//Sets value by Columns's Name & Iterates over Column according to scenario's value.
 	public void setDataExcel(String excelSheetName, String search, int scenario, int value);
+	
 }//Interface
