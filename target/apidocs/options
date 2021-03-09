@@ -1,0 +1,22 @@
+-classpath
+'/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi-ooxml/4.1.1/poi-ooxml-4.1.1.jar:/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi/4.1.1/poi-4.1.1.jar:/Users/angelicaviridiana/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar:/Users/angelicaviridiana/.m2/repository/com/github/virtuald/curvesapi/1.06/curvesapi-1.06.jar:/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi-ooxml-schemas/4.1.2/poi-ooxml-schemas-4.1.2.jar:/Users/angelicaviridiana/.m2/repository/org/apache/xmlbeans/xmlbeans/3.1.0/xmlbeans-3.1.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/angelicaviridiana/eclipse-workspace/excel-io/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Excel Reader and Writer with Interface Implementation 3.0 API'
+-use
+-version
+-windowtitle
+'Excel Reader and Writer with Interface Implementation 3.0 API'
