@@ -1,0 +1,57 @@
+/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/bin/javadoc
+@options
+@packages
+-classpath
+'/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi-ooxml/4.1.1/poi-ooxml-4.1.1.jar:/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi/4.1.1/poi-4.1.1.jar:/Users/angelicaviridiana/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar:/Users/angelicaviridiana/.m2/repository/com/github/virtuald/curvesapi/1.06/curvesapi-1.06.jar:/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi-ooxml-schemas/4.1.2/poi-ooxml-schemas-4.1.2.jar:/Users/angelicaviridiana/.m2/repository/org/apache/xmlbeans/xmlbeans/3.1.0/xmlbeans-3.1.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/angelicaviridiana/eclipse-workspace/excel-io/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Excel Reader and Writer with Interface Implementation 3.0 API'
+-use
+-version
+-windowtitle
+'Excel Reader and Writer with Interface Implementation 3.0 API'
+com.regav
+com.regav
+com.regav.interfaces
+/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi-ooxml/4.1.1/poi-ooxml-4.1.1.jar = 1609795616693
+/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi/4.1.1/poi-4.1.1.jar = 1609795618610
+/Users/angelicaviridiana/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar = 1615230579875
+/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar = 1609795616794
+/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar = 1609795619742
+/Users/angelicaviridiana/.m2/repository/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar = 1609795619925
+/Users/angelicaviridiana/.m2/repository/com/github/virtuald/curvesapi/1.06/curvesapi-1.06.jar = 1609795619974
+/Users/angelicaviridiana/.m2/repository/org/apache/poi/poi-ooxml-schemas/4.1.2/poi-ooxml-schemas-4.1.2.jar = 1609795623324
+/Users/angelicaviridiana/.m2/repository/org/apache/xmlbeans/xmlbeans/3.1.0/xmlbeans-3.1.0.jar = 1609795622880
+/Users/angelicaviridiana/eclipse-workspace/excel-io/src/main/java = 1615229654135
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/constant-values.html = 1615256835201
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/tag-search-index.js = 1615256835245
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/overview-tree.html = 1615256835217
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/module-search-index.js = 1615256835239
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/index.html = 1615256835223
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/package-search-index.js = 1615256835239
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/jquery-ui.overrides.css = 1615256835266
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/index-all.html = 1615256835245
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/allpackages-index.html = 1615256835250
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/deprecated-list.html = 1615256835221
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/member-search-index.js = 1615256835244
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/script.js = 1615256835257
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/stylesheet.css = 1615256835257
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/overview-summary.html = 1615256835252
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/help-doc.html = 1615256835255
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/element-list = 1615256835188
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/allclasses-index.html = 1615256835249
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/type-search-index.js = 1615256835239
+/Users/angelicaviridiana/eclipse-workspace/excel-io/target/apidocs/search.js = 1615256835258
