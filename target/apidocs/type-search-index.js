@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.anvirego","l":"Excel"},{"p":"com.anvirego","l":"ExcelIdem"},{"p":"com.anvirego.interfaces","l":"ExcelInterface"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.github.anvirego","l":"Excel"},{"p":"com.github.anvirego","l":"ExcelIdem"},{"p":"com.github.anvirego.interfaces","l":"ExcelInterface"}];updateSearchResults();
