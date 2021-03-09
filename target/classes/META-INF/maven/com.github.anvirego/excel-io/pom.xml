@@ -3,7 +3,7 @@
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>com.regav</groupId>
+  <groupId>com.github.anvirego</groupId>
   <artifactId>excel-io</artifactId>
   <version>3.0</version>
   <packaging>jar</packaging>
@@ -22,7 +22,7 @@
      <developers>
         <developer>
             <name>Angelica V. Rebolloza</name>
-            <email></email>
+            <email>evee_chan@hotmail.com</email>
             <organization>Regav</organization>
             <organizationUrl>https://github.com/Anvirego</organizationUrl>
         </developer>
@@ -116,6 +116,17 @@
             </execution>
           </executions>
         </plugin>
+        <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
     </plugins>
 </build>
     

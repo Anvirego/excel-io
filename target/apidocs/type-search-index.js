@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.regav","l":"Excel"},{"p":"com.regav","l":"ExcelIdem"},{"p":"com.regav.interfaces","l":"ExcelInterface"}];updateSearchResults();
