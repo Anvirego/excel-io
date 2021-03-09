@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.github.anvirego.interfaces.ExcelInterface;
 /**
  * @author Ing. Angelica Viridiana Rebolloza Gonzalez.
- * @version 4.0 03/2021.
+ * @version 2.0 03/2021.
  * ExcelLogic: Library main logic. 
  */
 public class ExcelLogic implements ExcelInterface {
@@ -38,7 +38,7 @@ public class ExcelLogic implements ExcelInterface {
 		} 
 		return sheetBook;
 	}//Method
-		
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 	protected Workbook readDataExcel(String excelFileName) throws FileNotFoundException, IOException {		
 		System.out.println("::::: readDataExcel :::::");
 		File file = new File(excelFileName);
@@ -55,11 +55,6 @@ public class ExcelLogic implements ExcelInterface {
 		} 
 		return excelWorkBook;
 	}//Method
-	
-	public static ExcelInterface globalInstance() throws FileNotFoundException, IOException {
-		ExcelInterface ei = ExcelIdem.getInstance("");
-		return ei;
-	}
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 	@Override
 	public String getDataExcel(String search) {
@@ -82,6 +77,5 @@ public class ExcelLogic implements ExcelInterface {
 	@Override
 	public void setDataExcel(String excelSheetName, String search, int scenario, int value) {
 		// TODO Auto-generated method stub
-		
 	}
 }//Class
