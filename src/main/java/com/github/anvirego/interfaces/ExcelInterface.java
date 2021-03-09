@@ -1,4 +1,5 @@
 package com.github.anvirego.interfaces;
+
 /**
  * @author Ing. Angelica Viridiana Rebolloza Gonzalez.
  * @version 3.0 03/2021.
