@@ -106,4 +106,5 @@ public final class ExcelIdem extends ExcelLogic {
 			fileOut.close();
 		} catch (Exception e) {System.out.println("¡¡¡¡¡ setDataExcel Method: "+e+"!!!!!");}
 	}//Method
+	
 }//Class

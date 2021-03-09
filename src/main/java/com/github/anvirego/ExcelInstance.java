@@ -14,10 +14,11 @@ public class ExcelInstance {
 	public static ExcelInterface getInstance(String excelFileName, String excelSheetName) throws FileNotFoundException, IOException {
 		ExcelInterface ei = Excel.getInstance(excelFileName, excelSheetName);
 		return ei;
-	}
+	}//Method
 	
 	public static ExcelInterface getInstance(String excelFileName) throws FileNotFoundException, IOException {
 		ExcelInterface ei = ExcelIdem.getInstance(excelFileName);
 		return ei;
-	}
+	}//Method
+	
 }//Class

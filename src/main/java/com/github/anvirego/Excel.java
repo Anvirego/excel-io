@@ -100,4 +100,5 @@ public final class Excel extends ExcelLogic {
 		} catch (Exception e) {System.out.println("¡¡¡¡¡ getDataExcel Method: "+e+"!!!!!");}
 		return cellData;
 	}//Method
+	
 }//Class

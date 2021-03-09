@@ -78,4 +78,5 @@ public class ExcelLogic implements ExcelInterface {
 	public void setDataExcel(String excelSheetName, String search, int scenario, int value) {
 		// TODO Auto-generated method stub
 	}
+	
 }//Class
