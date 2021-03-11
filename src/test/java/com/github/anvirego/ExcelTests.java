@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import com.github.anvirego.interfaces.ExcelInterface;
 
-
 /**
  * @author Ing. Angelica Viridiana Rebolloza Gonzalez.
- * @version 2.0 03/2021. ExcelTests: Examples of implementation.
+ * @version 2.0 03/2021. 
+ * ExcelTests: Examples of implementation.
  */
 public class ExcelTests {
 

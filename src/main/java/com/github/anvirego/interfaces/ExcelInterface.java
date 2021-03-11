@@ -2,7 +2,7 @@ package com.github.anvirego.interfaces;
 
 /**
  * @author Ing. Angelica Viridiana Rebolloza Gonzalez.
- * @version 3.0 03/2021.
+ * @version 1.0 03/2021.
  * ExcelInterface: Interface Implementation. 
  */
 public interface ExcelInterface {
